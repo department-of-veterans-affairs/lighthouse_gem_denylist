@@ -1,0 +1,6 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gem 'dependency_not_allowed', path: '../dependency_not_allowed'
+gem 'lighthouse_gem_denylist', path: '../..'
