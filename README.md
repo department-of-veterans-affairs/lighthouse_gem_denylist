@@ -16,6 +16,10 @@ gem 'lighthouse_gem_denylist', git: 'git@github.com:department-of-veterans-affai
 
 With this line in place, `bundle install` will fail if you attempt to include any gems from [gem_denylist.yml](./gem_denylist.yml).
 
+### Overriding the denylist
+
+If you need to override the denylist, create a `gem_allowlist.yml` in your project alongisde your Gemfile. Inside this file, include an array of gem names to allow. These will override the default denylist. See the [`with_allowlist_override` example](./examples/with_allowlist_override).
+
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies. Then, test the plugin by running `bundle install` in any of the directories in the [examples](./examples) folder.
