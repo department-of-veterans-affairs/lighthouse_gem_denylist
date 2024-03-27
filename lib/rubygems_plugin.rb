@@ -2,12 +2,6 @@
 
 require 'yaml'
 
-def get_all_dependencies(gemspec)
-  [gemspec.name] + gemspec.runtime_dependencies.map do |subdep|
-    [subdep.name] + get_all_dependencies(get_gemspec(subdep.name, subdep.requirement))
-  end.flatten.uniq
-end
-
 Gem.pre_install do
   denylist = YAML.load_file(File.join(__dir__, '../gem_denylist.yml'))
   install_dir = File.dirname(Bundler.default_gemfile)
@@ -21,11 +15,12 @@ Gem.pre_install do
     denylist -= allowlist
   end
 
-  all_deps = Bundler.definition.specs.map(&:name)
-  bad_gems = all_deps & denylist
+  all_gems = Bundler.definition.specs.map(&:name)
+  bad_gems = all_gems & denylist
 
   unless bad_gems.empty?
+    bad_gems_str = "gem#{bad_gems.count > 1 ? 's' : ''} '#{bad_gems.join("', '")}'"
     raise Gem::Exception,
-          "Lighthouse does not allow installation of gem#{bad_gems.count > 1 ? 's' : ''} '#{bad_gems.join("', '")}'"
+          "The Lighthouse Delivery Platform does not allow installation of #{bad_gems_str}"
   end
 end

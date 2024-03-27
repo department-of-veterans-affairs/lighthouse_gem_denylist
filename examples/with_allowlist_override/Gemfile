@@ -3,4 +3,5 @@
 source 'https://rubygems.org'
 
 gem 'lighthouse_gem_denylist', path: '../..'
-gem 'rails_admin'
+gem 'rails_admin' # Allowed by gem_allowlist.yml
+gem 'rubocop'

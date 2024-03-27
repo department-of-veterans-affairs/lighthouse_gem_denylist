@@ -1,2 +1,5 @@
 # Installation of Gems listed here will be denied
+# ---
+- activeadmin
+- administrate
 - rails_admin

@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gemspec # This gemspec contains rails_admin, which will fail to install
+
+gem 'administrate' # This gem will also fail to install
+gem 'lighthouse_gem_denylist', path: '../..'
+gem 'rubocop'

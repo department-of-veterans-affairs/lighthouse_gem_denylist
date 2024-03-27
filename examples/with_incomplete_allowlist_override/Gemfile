@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gem 'administrate' # Not included in gem_allowlist.yml - will fail to install
+gem 'lighthouse_gem_denylist', path: '../..'
+gem 'rails_admin'  # Allowed by gem_allowlist.yml
+gem 'rubocop'

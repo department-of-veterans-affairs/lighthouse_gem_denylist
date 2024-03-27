@@ -2,6 +2,6 @@
 
 source 'https://rubygems.org'
 
-gemspec
-
 gem 'lighthouse_gem_denylist', path: '../..'
+gem 'rubocop'
+gem 'with_denied_dependency', path: '../with_denied_dependency'
