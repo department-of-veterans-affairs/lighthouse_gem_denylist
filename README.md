@@ -11,7 +11,7 @@ This gem is intended to be used in your project's `Gemfile` with a `git` source,
 ```ruby
 source 'https://rubygems.org'
 
-gem 'lighthouse_gem_denylist', git: 'git@github.com:department-of-veterans-affairs/lighthouse_gem_denylist.git', branch: 'main'
+gem 'lighthouse_gem_denylist', git: 'https://github.com/department-of-veterans-affairs/lighthouse_gem_denylist.git', branch: 'main'
 ```
 
 With this line in place, `bundle install` will fail if you attempt to include any gems from [the denylist](./gem_denylist.yml).
